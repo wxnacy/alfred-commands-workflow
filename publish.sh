@@ -3,4 +3,4 @@
 # Description:
 
 
-./push_tag.sh $(date '+%Y.%m.%d.%H%M%S') new version
+./push_tag.sh $(date '+%Y.%m.%d') new version

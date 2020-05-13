@@ -116,11 +116,11 @@
 	<key>createdby</key>
 	<string>wxnacy</string>
 	<key>description</key>
-	<string>命令行工具</string>
+	<string>命令行工具帮助工具</string>
 	<key>disabled</key>
 	<false/>
 	<key>name</key>
-	<string>Commands</string>
+	<string>Commands Help Tools</string>
 	<key>objects</key>
 	<array>
 		<dict>
@@ -524,7 +524,11 @@ done</string>
 			<integer>320</integer>
 		</dict>
 	</dict>
+	<key>variablesdontexport</key>
+	<array/>
+	<key>version</key>
+	<string>2020.05.13</string>
 	<key>webaddress</key>
-	<string>https://wxnacy.com</string>
+	<string>https://github.com/wxnacy/alfred-commands-workflow</string>
 </dict>
 </plist>
