@@ -1,0 +1,13 @@
+git add ., 将所有新增、修改、删除的文件提交到索引中
+git add --ignore-removal ., 将所有新增、修改的文件提交到索引中
+git add -A, 将所有新增、修改、删除的文件提交到索引中
+git add -u, 将所有修改、删除的文件提交到索引中
+git init, 初始化当前目录为仓库
+git init {repo_name}, 创建 {repo_name} 仓库
+git init {repo_name}, 创建 {repo_name} 仓库
+git config --global user.name "your name", 全局配置 git 用户名
+git config --global user.email "youremail@gmail.com", 全局配置 git 邮箱
+git config credential.helper store, 储存当前仓库凭证
+git config --global credential.helper store, 全局模式储存仓库凭证
+git config --global credential.helper cache, 全局模式缓存凭证 15 分钟
+git fetch origin {branch_name}, 把远程分支拉到本地

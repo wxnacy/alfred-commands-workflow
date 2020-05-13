@@ -1,0 +1,18 @@
+[
+    {
+        "title": "git config credential.helper store",
+        "subtitle": "储存当前仓库凭证"
+    },
+    {
+        "title": "git config --global credential.helper store",
+        "subtitle": "全局模式储存仓库凭证"
+    },
+    {
+        "title": "git config --global credential.helper cache",
+        "subtitle": "全局模式缓存凭证 15 分钟"
+    },
+    {
+        "title": "git fetch origin {branch_name}",
+        "subtitle": "把远程分支拉到本地"
+    }
+]

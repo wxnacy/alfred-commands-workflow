@@ -1,0 +1,32 @@
+{
+    "git": [
+        {
+            "title": "git-scm",
+            "subtitle": "https://git-scm.com/docs/{}",
+            "icon": "./icon/git.png"
+        }
+    ],
+    "vagrant": [
+        {
+            "title": "Vagrant",
+            "subtitle": "https://www.vagrantup.com/docs/cli/{}.html",
+            "icon": "./icon/vagrant.png"
+        }
+    ],
+    "default": [
+        {
+            "title": "die.net",
+            "subtitle": "https://linux.die.net/man/1/{}",
+            "cmd_excludes": ["vagrant"]
+        },
+        {
+            "title": "explainshell",
+            "subtitle": "https://www.explainshell.com/explain?cmd={}",
+            "cmd_excludes": ["git", "vagrant"]
+        },
+        {
+            "title": "Manpages",
+            "subtitle": "https://man.cx/{}"
+        }
+    ]
+}
