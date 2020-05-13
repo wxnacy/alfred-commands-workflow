@@ -12,4 +12,4 @@
 
 ## 查看帮助文档
 
-![man](man.gif)
+![man](https://raw.githubusercontent.com/wxnacy/image/master/blog/man.gif)
