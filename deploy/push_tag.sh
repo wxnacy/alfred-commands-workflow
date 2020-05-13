@@ -5,7 +5,7 @@ PUSH_MSG=${@/$1/}
 
 
 main(){
-    ./push.sh $PUSH_MSG
+    ./deploy/push.sh $PUSH_MSG
     git tag ${TAG_NAME}
     git push origin ${TAG_NAME}
 }

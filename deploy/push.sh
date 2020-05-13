@@ -4,13 +4,13 @@
 # __copyright__ = "Copyright of GoChinaTV (2017)."
 
 MSG=$@
-branch_name=`./get_branch.sh`
+branch_name=`./deploy/get_branch.sh`
 
 push(){
     echo '******************************'
     echo '********开始push api：'
     echo '******************************'
-    ./commit.sh ${MSG}
+    ./deploy/commit.sh ${MSG}
     git pull origin $branch_name
     git add . && git commit -m "${MSG}"
     git push origin $branch_name

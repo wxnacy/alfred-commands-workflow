@@ -4,7 +4,5 @@
 # __copyright__ = "Copyright of GoChinaTV (2017)."
 
 
-# echo '`git branch`'
-# git branch | grep '*' | awk '{print $2}'
 res=`git branch | grep '*' | awk '{print $2}'`
 echo $res
