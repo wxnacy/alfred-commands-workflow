@@ -213,7 +213,7 @@ done</string>
 				<key>escaping</key>
 				<integer>0</integer>
 				<key>keyword</key>
-				<string>cmds</string>
+				<string>cp</string>
 				<key>queuedelaycustom</key>
 				<integer>3</integer>
 				<key>queuedelayimmediatelyinitially</key>
@@ -223,7 +223,7 @@ done</string>
 				<key>queuemode</key>
 				<integer>1</integer>
 				<key>runningsubtext</key>
-				<string>please</string>
+				<string>请稍等</string>
 				<key>script</key>
 				<string>python search_commands.py $1</string>
 				<key>scriptargtype</key>
@@ -231,9 +231,9 @@ done</string>
 				<key>scriptfile</key>
 				<string></string>
 				<key>subtext</key>
-				<string>enter to copy</string>
+				<string>请输入内容，按确认键或 commond + 数字键复制</string>
 				<key>title</key>
-				<string>list commands</string>
+				<string>复制命令和文件</string>
 				<key>type</key>
 				<integer>0</integer>
 				<key>withspace</key>

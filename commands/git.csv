@@ -11,3 +11,5 @@ git config credential.helper store, 储存当前仓库凭证
 git config --global credential.helper store, 全局模式储存仓库凭证
 git config --global credential.helper cache, 全局模式缓存凭证 15 分钟
 git fetch origin {branch_name}, 把远程分支拉到本地
+git pull origin master --allow-unrelated-histories, 解决拉取项目到本地新仓库 fatal: refusing to merge unrelated histories 的问题
+git merge --abort, 撤销所有合并操作

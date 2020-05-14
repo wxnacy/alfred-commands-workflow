@@ -10,6 +10,11 @@ import logging
 
 from workflow import Workflow3
 
+ICONS = {
+        "git": './icon/git.png',
+        "vagrant": './icon/vagrant.png',
+        }
+
 def read_json(filename):
     lines = []
     with open(filename, 'r') as f:
@@ -44,13 +49,23 @@ def get_all_commands():
 def main(wf):
     args = wf.args
     logging.info(args)
+    first = args[0]
+    # 允许输入简写
+    if first == 'vg':
+        args[0] = 'vagrant'
 
     commands = get_all_commands()
+
     input_cmd = ' '.join(args)
     for cmd in commands:
         if cmd['title'].startswith(input_cmd):
             cmd['valid'] = True
             cmd['arg'] = cmd['title']
+            # 添加 icon
+            icon = ICONS.get(cmd['title'].split(' ')[0], './icon.png')
+            if icon:
+                cmd['icon'] = icon
+            logging.info(icon)
             wf.add_item(**cmd)
 
     wf.send_feedback()
