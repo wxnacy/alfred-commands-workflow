@@ -8,7 +8,7 @@
 
 ## 复制常用命令
 
-![cmds](https://github.com/wxnacy/image/blob/master/blog/cmds.gif)
+![cmds](https://github.com/wxnacy/image/blob/master/blog/alfred-cp.gif)
 
 ## 查看帮助文档
 

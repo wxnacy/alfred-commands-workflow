@@ -1,0 +1,34 @@
+# 在当前文件夹初始化 Vagrantfile
+vagrant init [name [url]]
+# 在当前文件夹初始化 centos7
+vagrant init centos/7
+# 启动虚拟机"
+vagrant up
+# 登陆虚拟机"
+vagrant ssh
+# 登陆虚拟机"
+vagrant halt
+# 销毁虚拟机"
+vagrant destroy [name|id]
+# 销毁虚拟机，并对询问回答 yes"
+vagrant destroy -f
+# 打包 box"
+vagrant package
+# 打包 box，并指定包名"
+vagrant package --ouput <box-name>
+# 当前虚拟机状态
+vagrant status
+# 重新加载虚拟机配置
+vagrant reload
+# 查看所有虚拟机状态
+vagrant global-status
+# 查看所有 box 列表
+vagrant box list
+# 删除 box
+vagrant box remove <box-name>
+# 删除 box，并指定版本
+vagrant box remove <box-name> --box-version <version>
+# 更新 box 版本"
+vagrant box update
+# 更新指定 box 版本
+vagrant box update --box <box-name>

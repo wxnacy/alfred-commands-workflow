@@ -30,19 +30,36 @@ def read_csv(filename):
     for line in lines:
         ls = line.split(',')
         item = dict(title = ls[0].strip(" "), subtitle = ls[1].strip(" "))
-        #  logging.info(item)
         items.append(item)
 
     return items
+
+def read_file(filename):
+    with open(filename, 'r') as f:
+        return [o.strip('\n').strip(" ") for o in f.readlines()]
+
+def read_cmd(filename):
+    lines = read_file(filename)
+    lines = list(filter(lambda x: x, lines))
+    items = []
+    num = len(lines) / 2
+    for i in range(num):
+        items.append(dict(
+            title = lines[i * 2 + 1],
+            subtitle = lines[i * 2],
+            ))
+    return items
+
 
 def get_all_commands():
     '''获取所有的命令'''
     files = os.listdir('./commands')
     commands = []
     for f in files:
-        if f.endswith('.csv'):
+        #  if f.endswith('.csv'):
+        if f.startswith('cmd_'):
             filename = './commands/' + f
-            data = read_csv(filename)
+            data = read_cmd(filename)
             commands.extend(data)
     return commands
 
