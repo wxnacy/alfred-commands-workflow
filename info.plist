@@ -45,6 +45,32 @@
 				<false/>
 			</dict>
 		</array>
+		<key>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>F97B3594-C530-4F63-B5F9-144A70D41B83</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>71463E91-2E01-41CC-B10F-3A01857AB2DE</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>7550C092-A6C8-4BB2-A593-865B5A9F831B</key>
 		<array>
 			<dict>
@@ -187,27 +213,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>argumenttype</key>
-				<integer>0</integer>
-				<key>keyword</key>
-				<string>run</string>
-				<key>subtext</key>
-				<string></string>
-				<key>text</key>
-				<string>执行命令并得到结果</string>
-				<key>withspace</key>
-				<true/>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.input.keyword</string>
-			<key>uid</key>
-			<string>0FA3CA6F-AB00-446F-95B9-EAB309AA7AD4</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -219,7 +224,7 @@
 				<key>scriptfile</key>
 				<string></string>
 				<key>type</key>
-				<integer>5</integer>
+				<integer>0</integer>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.action.script</string>
@@ -265,6 +270,27 @@
 			<string>1DF4C6B0-EDE0-42C1-B043-302FA3BBEDFA</string>
 			<key>version</key>
 			<integer>3</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>run</string>
+				<key>subtext</key>
+				<string></string>
+				<key>text</key>
+				<string>执行命令并得到结果</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>0FA3CA6F-AB00-446F-95B9-EAB309AA7AD4</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 		<dict>
 			<key>config</key>
@@ -334,6 +360,74 @@
 			<key>version</key>
 			<integer>1</integer>
 		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>dl</string>
+				<key>subtext</key>
+				<string>默认目录 ~/Downloads</string>
+				<key>text</key>
+				<string>下载文件</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>71463E91-2E01-41CC-B10F-3A01857AB2DE</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>File in ~/Downloads</string>
+				<key>title</key>
+				<string>Download successful</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F97B3594-C530-4F63-B5F9-144A70D41B83</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string># echo -n $(wget -P ${HOME}/Downloads -b -o ${HOME}/Downloads/wget-log $1)
+# &gt;&gt; ${HOME}/Downloads/dl-log
+cd ${HOME}/Downloads
+echo -n $(nohup curl $1 -O &amp;)</string>
+				<key>scriptargtype</key>
+				<integer>1</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
 	</array>
 	<key>readme</key>
 	<string></string>
@@ -360,12 +454,26 @@
 			<key>ypos</key>
 			<integer>35</integer>
 		</dict>
+		<key>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>455</integer>
+		</dict>
 		<key>5348461E-968E-4C7D-A961-2C53A47EEB39</key>
 		<dict>
 			<key>xpos</key>
 			<integer>520</integer>
 			<key>ypos</key>
 			<integer>35</integer>
+		</dict>
+		<key>71463E91-2E01-41CC-B10F-3A01857AB2DE</key>
+		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
+			<key>ypos</key>
+			<integer>455</integer>
 		</dict>
 		<key>7550C092-A6C8-4BB2-A593-865B5A9F831B</key>
 		<dict>
@@ -401,6 +509,13 @@
 			<integer>705</integer>
 			<key>ypos</key>
 			<integer>175</integer>
+		</dict>
+		<key>F97B3594-C530-4F63-B5F9-144A70D41B83</key>
+		<dict>
+			<key>xpos</key>
+			<integer>525</integer>
+			<key>ypos</key>
+			<integer>455</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>

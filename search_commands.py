@@ -7,12 +7,13 @@ import sys
 import json
 import os
 import logging
+import timeit
 
 from workflow import Workflow3
 
-ICONS = {
-        "git": './icon/git.png',
-        "vagrant": './icon/vagrant.png',
+ABBR = {
+        "py": "python",
+        "vg": "vagrant",
         }
 
 def read_json(filename):
@@ -43,11 +44,24 @@ def read_cmd(filename):
     lines = list(filter(lambda x: x, lines))
     items = []
     num = len(lines) / 2
+    # 设置 icon
+    # 查找是否存在如下对应文件
+    # ./commands/cmd_{category}
+    # ./icon/{category}.png
+    cmd_name = os.path.basename(filename).split("_")[1]
+    icon = './icon.png'
+    cmd_icon_path = './icon/{}.png'.format(cmd_name)
+    if os.path.exists(cmd_icon_path):
+        icon = cmd_icon_path
     for i in range(num):
-        items.append(dict(
+        item = dict(
             title = lines[i * 2 + 1],
             subtitle = lines[i * 2],
-            ))
+            icon = icon,
+            valid = True,
+        )
+        item['arg'] = item['title']
+        items.append(item)
     return items
 
 
@@ -56,35 +70,63 @@ def get_all_commands():
     files = os.listdir('./commands')
     commands = []
     for f in files:
-        #  if f.endswith('.csv'):
         if f.startswith('cmd_'):
             filename = './commands/' + f
             data = read_cmd(filename)
             commands.extend(data)
     return commands
 
+def simple_search(wf, items, q):
+    '''简单搜索'''
+    like_lines = []
+    split_likes = []
+    begin_lines = []
+    cmds = q.split(" ", 1)
+    cmd = cmds[0]
+    args = cmds[1] if len(cmds) > 1 else ''
+    for item in items:
+        title = item['title']
+        if title.startswith(q):
+            wf.add_item(**item)
+            continue
+        if title.startswith(cmd):
+            split_likes.append(item)
+            continue
+
+        if q in item['title']:
+            like_lines.append(item)
+            continue
+        #  for k in q.split(" "):
+            #  if k in item['title']:
+                #  like_lines.append(k)
+                #  continue
+    for item in split_likes:
+        lines = item['title'].split(" ", 1)
+        if len(lines) == 1:
+            continue
+
+        if args in lines[1]:
+            wf.add_item(**item)
+
+
+    for item in like_lines:
+        wf.add_item(**item)
+
 def main(wf):
+    b = timeit.default_timer()
     args = wf.args
     logging.info(args)
-    first = args[0]
-    # 允许输入简写
-    if first == 'vg':
-        args[0] = 'vagrant'
+    # 检查缩写
+    for k, v in ABBR.items():
+        if args[0] == k:
+            args[0] = v
 
     commands = get_all_commands()
 
     input_cmd = ' '.join(args)
-    for cmd in commands:
-        if cmd['title'].startswith(input_cmd):
-            cmd['valid'] = True
-            cmd['arg'] = cmd['title']
-            # 添加 icon
-            icon = ICONS.get(cmd['title'].split(' ')[0], './icon.png')
-            if icon:
-                cmd['icon'] = icon
-            logging.info(icon)
-            wf.add_item(**cmd)
+    simple_search(wf, commands, input_cmd)
 
+    logging.info(timeit.default_timer() - b)
     wf.send_feedback()
 
 
