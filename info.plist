@@ -342,71 +342,71 @@
 		<key>0FA3CA6F-AB00-446F-95B9-EAB309AA7AD4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>170</integer>
+			<integer>180</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>175</integer>
 		</dict>
 		<key>1DF4C6B0-EDE0-42C1-B043-302FA3BBEDFA</key>
 		<dict>
 			<key>xpos</key>
-			<integer>510</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>175</integer>
 		</dict>
 		<key>2CE54DD1-24E6-4356-BFCA-AB8E6F825958</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>350</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>35</integer>
 		</dict>
 		<key>5348461E-968E-4C7D-A961-2C53A47EEB39</key>
 		<dict>
 			<key>xpos</key>
-			<integer>510</integer>
+			<integer>520</integer>
 			<key>ypos</key>
-			<integer>180</integer>
+			<integer>35</integer>
 		</dict>
 		<key>7550C092-A6C8-4BB2-A593-865B5A9F831B</key>
 		<dict>
 			<key>xpos</key>
-			<integer>170</integer>
-			<key>ypos</key>
 			<integer>180</integer>
+			<key>ypos</key>
+			<integer>35</integer>
 		</dict>
 		<key>92606F4B-F131-40B2-AB3B-BE0A56339FA8</key>
 		<dict>
 			<key>xpos</key>
-			<integer>170</integer>
+			<integer>180</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>320</integer>
 		</dict>
 		<key>ABFDAC0A-59AC-46FF-8317-30A5EE1E72B4</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>350</integer>
 			<key>ypos</key>
-			<integer>465</integer>
+			<integer>320</integer>
 		</dict>
 		<key>AEEE997C-352F-4019-BFEF-40480C5770E9</key>
 		<dict>
 			<key>xpos</key>
-			<integer>340</integer>
+			<integer>350</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>175</integer>
 		</dict>
 		<key>C2C22059-F577-4982-B0BF-665E0E358013</key>
 		<dict>
 			<key>xpos</key>
-			<integer>695</integer>
+			<integer>705</integer>
 			<key>ypos</key>
-			<integer>320</integer>
+			<integer>175</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2020.05.14</string>
+	<string>2020.05.21</string>
 	<key>webaddress</key>
 	<string>https://github.com/wxnacy/alfred-commands-workflow</string>
 </dict>
