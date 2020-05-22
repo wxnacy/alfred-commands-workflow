@@ -46,23 +46,12 @@
 			</dict>
 		</array>
 		<key>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</key>
-		<array>
-			<dict>
-				<key>destinationuid</key>
-				<string>F97B3594-C530-4F63-B5F9-144A70D41B83</string>
-				<key>modifiers</key>
-				<integer>0</integer>
-				<key>modifiersubtext</key>
-				<string></string>
-				<key>vitoclose</key>
-				<false/>
-			</dict>
-		</array>
+		<array/>
 		<key>71463E91-2E01-41CC-B10F-3A01857AB2DE</key>
 		<array>
 			<dict>
 				<key>destinationuid</key>
-				<string>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</string>
+				<string>F800D030-BFC4-490B-813D-74D375AA6EF0</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -104,6 +93,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>1DF4C6B0-EDE0-42C1-B043-302FA3BBEDFA</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>F800D030-BFC4-490B-813D-74D375AA6EF0</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -245,7 +247,7 @@
 				<key>text</key>
 				<string>{query}</string>
 				<key>title</key>
-				<string>Refresh successful</string>
+				<string>Refresh Successful</string>
 			</dict>
 			<key>type</key>
 			<string>alfred.workflow.output.notification</string>
@@ -384,27 +386,6 @@
 		<dict>
 			<key>config</key>
 			<dict>
-				<key>lastpathcomponent</key>
-				<false/>
-				<key>onlyshowifquerypopulated</key>
-				<false/>
-				<key>removeextension</key>
-				<false/>
-				<key>text</key>
-				<string>File in ~/Downloads</string>
-				<key>title</key>
-				<string>Download successful</string>
-			</dict>
-			<key>type</key>
-			<string>alfred.workflow.output.notification</string>
-			<key>uid</key>
-			<string>F97B3594-C530-4F63-B5F9-144A70D41B83</string>
-			<key>version</key>
-			<integer>1</integer>
-		</dict>
-		<dict>
-			<key>config</key>
-			<dict>
 				<key>concurrently</key>
 				<false/>
 				<key>escaping</key>
@@ -427,6 +408,27 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<string>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</string>
 			<key>version</key>
 			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>File in ~/Downloads</string>
+				<key>title</key>
+				<string>Download Successful</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>F800D030-BFC4-490B-813D-74D375AA6EF0</string>
+			<key>version</key>
+			<integer>1</integer>
 		</dict>
 	</array>
 	<key>readme</key>
@@ -457,7 +459,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 		<key>3E407FFE-9A3F-49F5-B15F-CE97FAFAED07</key>
 		<dict>
 			<key>xpos</key>
-			<integer>350</integer>
+			<integer>510</integer>
 			<key>ypos</key>
 			<integer>455</integer>
 		</dict>
@@ -510,10 +512,10 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<key>ypos</key>
 			<integer>175</integer>
 		</dict>
-		<key>F97B3594-C530-4F63-B5F9-144A70D41B83</key>
+		<key>F800D030-BFC4-490B-813D-74D375AA6EF0</key>
 		<dict>
 			<key>xpos</key>
-			<integer>525</integer>
+			<integer>350</integer>
 			<key>ypos</key>
 			<integer>455</integer>
 		</dict>
@@ -521,7 +523,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2020.05.21</string>
+	<string>2020.05.22</string>
 	<key>webaddress</key>
 	<string>https://github.com/wxnacy/alfred-commands-workflow</string>
 </dict>
