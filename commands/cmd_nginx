@@ -1,0 +1,5 @@
+# 检测配置文件
+nginx -t
+
+# 重新加载配置文件
+nginx -s reload

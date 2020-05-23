@@ -1,0 +1,5 @@
+# 列出本机所有网络服务
+networksetup -listallnetworkservices
+
+# 查看 Mac 系统内网 ip
+ifconfig | grep en0 -A 3 | grep 'inet ' | awk '{print $2}'

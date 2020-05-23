@@ -1,0 +1,19 @@
+# 重启所有服务
+docker restart `docker ps -a | awk '{print $1}'`
+# 实时查看日志并过滤信息
+docker logs -f --tail 10 <continer-name> 2>&1 | grep <pattern>
+# 查看当前运行的进程列表
+docker ps
+# 查看所有进程列表
+docker ps -a
+# 在当前目录创建镜像
+docker build -t <image-name> .
+# 查看镜像列表
+docker image ls
+# 查看版本
+docker --version
+# 分别查看 client 和 server 的版本
+docker version
+# 查看 docker 详情
+docker info
+

@@ -14,3 +14,6 @@ echo -n 'hello world' | pbcopy
 echo -n $(echo -n $(pwd) | sed 's/ /\\ /g') | pbcopy
 # 黏贴
 pbpaste
+
+# 查看 Linux 系统内网 ip
+ifconfig | grep 'eth0' -A 1 | grep 'inet ' | awk '{print $2}' | sed 's/addr://g'
