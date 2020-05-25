@@ -17,3 +17,12 @@
 ## 下载文件
 
 ![dl](https://github.com/wxnacy/image/blob/master/blog/alfred-dl.gif)
+
+<script>
+
+function test(){
+    console.log("Hello World");
+}
+test()
+
+</script>

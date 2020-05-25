@@ -13,10 +13,14 @@ from workflow import Workflow3
 from workflow import web
 
 def run(cmd):
+    '''运行 shell 命令'''
     cmds = cmd.split(" ")
     return subprocess.check_output(cmds).decode()
 
 def get_local_ip():
+    '''
+    获取内网 ip
+    '''
     lines = run("ifconfig").replace("\t", "").split("\n")
     is_local = 0
     for line in lines:
@@ -57,8 +61,6 @@ def main(wf):
         item = dict(arg = latlng, valid = True, title = latlng,
                 subtitle = '时区')
         wf.add_item(**item)
-
-
 
     logging.info(list(filter(lambda o: 'item' in o, dir(wf))))
     logging.info(wf._items)

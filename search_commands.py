@@ -4,7 +4,6 @@
 # Description:
 
 import sys
-import json
 import os
 import logging
 import timeit
@@ -16,30 +15,32 @@ ABBR = {
         "vg": "vagrant",
         }
 
-def read_json(filename):
-    lines = []
-    with open(filename, 'r') as f:
-        lines = f.readlines()
-    return json.loads(''.join(lines))
+#  def read_json(filename):
+    #  lines = []
+    #  with open(filename, 'r') as f:
+        #  lines = f.readlines()
+    #  return json.loads(''.join(lines))
 
-def read_csv(filename):
-    lines = []
-    with open(filename, 'r') as f:
-        lines = f.readlines()
-    logging.info(lines)
-    items = []
-    for line in lines:
-        ls = line.split(',')
-        item = dict(title = ls[0].strip(" "), subtitle = ls[1].strip(" "))
-        items.append(item)
-
-    return items
+#  def read_csv(filename):
+    #  lines = []
+    #  with open(filename, 'r') as f:
+        #  lines = f.readlines()
+    #  logging.info(lines)
+    #  items = []
+    #  for line in lines:
+        #  ls = line.split(',')
+        #  item = dict(title = ls[0].strip(" "), subtitle = ls[1].strip(" "))
+        #  items.append(item)
+    #  return items
 
 def read_file(filename):
     with open(filename, 'r') as f:
         return [o.strip('\n').strip(" ") for o in f.readlines()]
 
 def read_cmd(filename):
+    '''
+    读取指令文件
+    '''
     lines = read_file(filename)
     lines = list(filter(lambda x: x, lines))
     items = []
@@ -80,26 +81,25 @@ def simple_search(wf, items, q):
     '''简单搜索'''
     like_lines = []
     split_likes = []
-    begin_lines = []
     cmds = q.split(" ", 1)
     cmd = cmds[0]
     args = cmds[1] if len(cmds) > 1 else ''
     for item in items:
         title = item['title']
+        # 先完全匹配
         if title.startswith(q):
             wf.add_item(**item)
             continue
+        # 再匹配前缀
         if title.startswith(cmd):
             split_likes.append(item)
             continue
 
+        # 最后匹配包含
         if q in item['title']:
             like_lines.append(item)
             continue
-        #  for k in q.split(" "):
-            #  if k in item['title']:
-                #  like_lines.append(k)
-                #  continue
+
     for item in split_likes:
         lines = item['title'].split(" ", 1)
         if len(lines) == 1:
