@@ -1,0 +1,32 @@
+# 文档地址
+https://help.aliyun.com/document_detail/50452.html?spm=a2c4g.11186623.6.702.11902e69EVPBh9
+# 列举 Bucket
+ossutil ls
+# 列举指定Bucket下所有的Object
+ossutil ls oss://<bucketname>
+# 上传文件
+ossutil cp <filename> oss://<bucketname>/<path>
+# 下载文件
+ossutil cp oss://<bucketname>/<path> <filename>
+# 拷贝文件
+ossutil cp oss://<bucketname>/<path> oss://<bucketname>/<path>
+# 上传文件夹
+ossutil cp -r <dirname> oss://<bucketname>/<path>
+# 上传文件夹并跳过相同文件
+ossutil cp -ru <dirname> oss://<bucketname>/<path>
+# 上传所有文件格式为txt的文件
+ossutil cp -r <dirname> oss://<bucketname>/<path> --include "*.txt"
+# 上传所有文件名包含abc且不是jpg和txt格式的文件
+ossutil cp -r <dirname> oss://<bucketname>/<path> --include "*abc*" --exclude "*.jpg" --exclude "*.txt"
+# 仅上传当前目录下的文件，忽略子目录
+ossutil cp -r <dirname> oss://<bucketname>/<path> --only-current-dir
+# 上传文件时启用 100 个并发数
+ossutil cp -r <dirname> oss://<bucketname>/<path> --jobs 100
+# 删除空Bucket
+ossutil rm oss://<bucketname> -b
+# 清除Bucket数据并删除Bucket
+ossutil rm oss://<bucketname> -bar
+# 删除单个Object
+ossutil rm oss://<bucketname>/<object>
+# 删除指定前缀的所有Object
+ossutil rm oss://<bucketname>/<path>/ -r
