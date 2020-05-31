@@ -775,7 +775,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 	<key>variablesdontexport</key>
 	<array/>
 	<key>version</key>
-	<string>2020.05.23</string>
+	<string>2020.06.01</string>
 	<key>webaddress</key>
 	<string>https://github.com/wxnacy/alfred-commands-workflow</string>
 </dict>

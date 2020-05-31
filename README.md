@@ -8,15 +8,18 @@
 
 ## 复制常用命令
 
-![cmds](https://github.com/wxnacy/image/blob/master/blog/alfred-cp.gif)
+<!-- ![cmds](https://github.com/wxnacy/image/blob/master/blog/alfred-cp.gif) -->
+![t34KxS.gif](https://s1.ax1x.com/2020/06/01/t34KxS.gif)
 
 ## 查看帮助文档
 
-![man](https://raw.githubusercontent.com/wxnacy/image/master/blog/man.gif)
+<!-- ![man](https://raw.githubusercontent.com/wxnacy/image/master/blog/man.gif) -->
+![t34QKg.gif](https://s1.ax1x.com/2020/06/01/t34QKg.gif)
 
 ## 下载文件
 
-![dl](https://github.com/wxnacy/image/blob/master/blog/alfred-dl.gif)
+<!-- ![dl](https://github.com/wxnacy/image/blob/master/blog/alfred-dl.gif) -->
+![t34lrQ.gif](https://s1.ax1x.com/2020/06/01/t34lrQ.gif)
 
 ## 查询 ip
 
