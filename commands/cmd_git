@@ -7,6 +7,9 @@ git add -A
 # 将所有修改、删除的文件提交到索引中
 git add -u
 
+# 查看所有分支，并显示版本信息
+git branch -v
+
 # 初始化当前目录为仓库
 git init
 # 创建 <repo_name> 仓库

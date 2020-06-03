@@ -17,3 +17,6 @@ pbpaste
 
 # 查看 Linux 系统内网 ip
 ifconfig | grep 'eth0' -A 1 | grep 'inet ' | awk '{print $2}' | sed 's/addr://g'
+
+# 查看进程，并过滤关键字
+ps -ef | grep <pattern>

@@ -8,6 +8,7 @@ import json
 import os
 import logging
 import subprocess
+import re
 
 from workflow import Workflow3
 from workflow import web
@@ -39,10 +40,10 @@ def fmt_dt(dt):
 def format_timestamp(ts):
     '''格式化时间戳'''
     res = dict(timestamp = ts)
-    #  t = datetime.fromtimestamp(ts)
+    t = datetime.fromtimestamp(ts)
+    res['local'] = fmt_dt(t)
     t = datetime.utcfromtimestamp(ts)
-    res['local'] = fmt_dt(datetime.now())
-    #  t = t.replace(tzinfo=timezone("UTC"))
+    #  t = t.replace(tzinfo=utc)
 
     for i in list(range(-12, 13)):
         dt = t + timedelta(hours=i)
@@ -72,6 +73,27 @@ def output_result(wf, res):
             item['subtitle'] = '纽约时间'
             item['arg'] = item['title']
             wf.add_item(**item)
+        elif k == -7:
+            item['subtitle'] = '太平洋时间'
+            item['arg'] = item['title']
+            wf.add_item(**item)
+
+def unit2seconds(num, unit):
+    seconds = 0
+    if unit.startswith("year"):
+        seconds = num * 365 * 24 * 60 * 60
+    elif unit.startswith("month"):
+        seconds = num * 30 * 24 * 60 * 60
+    elif unit.startswith("day"):
+        seconds = num * 24 * 60 * 60
+    elif unit.startswith("hour"):
+        seconds = num * 60 * 60
+    elif unit.startswith("minute"):
+        seconds = num * 60
+    elif unit.startswith("second"):
+        seconds = num 
+    return seconds
+
 
 def main(wf):
     args = wf.args
@@ -79,16 +101,42 @@ def main(wf):
     t = args[0]
 
     whole_input = ' '.join(args)
+    # 获取单位时间之前的时间戳
+    findres = re.findall('\d+ [days|minutes|seconds|month|years|hours]+ ago',
+            whole_input)
+    if findres:
+        finds = findres[0].split(" ")
+        num = int(finds[0])
+        unit = finds[1]
+        seconds = unit2seconds(num, unit)
+        res = format_timestamp(int(time.time()) - seconds)
+        output_result(wf, res)
+        wf.send_feedback()
+        return
+
+    # 获取单位时间之后的时间戳
+    findres = re.findall('\d+ next [days|minutes|seconds|month|years|hours]+',
+            whole_input)
+    if findres:
+        finds = findres[0].split(" ")
+        num = int(finds[0])
+        unit = finds[2]
+        seconds = unit2seconds(num, unit)
+        res = format_timestamp(int(time.time()) + seconds)
+        output_result(wf, res)
+        wf.send_feedback()
+        return
+
 
     type = input_type(t)
     if type == int:
         res = format_timestamp(int(t))
         output_result(wf, res)
 
-
     item = dict(valid = True)
     if t == 'now':
-        res = now()
+        res = format_timestamp(int(time.time()))
+        #  res = now()
         output_result(wf, res)
 
     logging.info(list(filter(lambda o: 'item' in o, dir(wf))))
