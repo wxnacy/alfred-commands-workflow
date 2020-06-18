@@ -1,0 +1,10 @@
+# 启动 jupyter notebook 服务
+jupyter notebook
+# 启动 jupyter notebook 服务，并制定端口号
+jupyter notebook --port <port>
+# 将 ipynb 转为 html 格式
+jupyter nbconvert <filename>.ipynb
+# 将 ipynb 转为 html 格式，并指定输出目录
+jupyter nbconvert <filename>.ipynb --output-dir=<dirname>
+# 将 ipynb 转为 html 格式，并指定输出名称
+jupyter nbconvert <filename>.ipynb --output=<filename>
