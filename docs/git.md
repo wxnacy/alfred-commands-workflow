@@ -1,0 +1,94 @@
+## git add
+**将所有新增、修改的文件提交到索引中**
+```
+git add --ignore-removal .
+```
+**将所有新增、修改、删除的文件提交到索引中**
+```
+git add -A
+```
+**将所有修改、删除的文件提交到索引中**
+```
+git add -u
+```
+**将所有新增、修改、删除的文件提交到索引中**
+```
+git add .
+```
+## git blame
+**查看文件每行的最后提交人和时间**
+```
+git blame <file>
+```
+**查看文件某个方法的最后提交人和时间**
+```
+git blame <file> -L :<funcname>
+```
+**查看文件行数范围内的最后提交人和时间**
+```
+git blame <file> -L <start>,<end>
+```
+## git branch
+**查看所有分支，并显示版本信息**
+```
+git branch -v
+```
+## git checkout
+**在本地创建远程分支**
+```
+git checkout -b <local-branch-name> origin/<remote-branch-name>
+```
+## git config
+**全局模式缓存凭证 15 分钟**
+```
+git config --global credential.helper cache
+```
+**全局模式储存仓库凭证**
+```
+git config --global credential.helper store
+```
+**全局配置 git 邮箱**
+```
+git config --global user.email "youremail@gmail.com"
+```
+**全局配置 git 用户名**
+```
+git config --global user.name "your name"
+```
+**储存当前仓库凭证**
+```
+git config credential.helper store
+```
+## git fetch
+**把远程分支拉到本地**
+```
+git fetch origin <branch_name>
+```
+## git init
+**初始化当前目录为仓库**
+```
+git init
+```
+**创建 <repo_name> 仓库**
+```
+git init <repo_name>
+```
+## git log
+**查看某人一段时间的提交记录，并显示详情**
+```
+git log --stat --author=<pattern> --after=<date> --before=<date>
+```
+## git merge
+**撤销所有合并操作**
+```
+git merge --abort
+```
+## git pull
+**拉取远程分支到本地**
+```
+git pull origin <branch-name>
+```
+**解决拉取项目到本地新仓库 fatal: refusing to merge unrelated histories 的问题**
+```
+git pull origin master --allow-unrelated-histories
+```

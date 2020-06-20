@@ -1,0 +1,18 @@
+
+site_name: 常用命令      # 站点名称
+nav:                    # 文档目录
+    - 首页: index.md
+    - Docker: docker.md
+    - Ffmpeg: ffmpeg.md
+    - Git: git.md
+    - Hexo: hexo.md
+    - Javascript: javascript.md
+    - Jupyter: jupyter.md
+    - Mac: mac.md
+    - Mysql: mysql.md
+    - Nginx: nginx.md
+    - Oss: oss.md
+    - Other: other.md
+    - Python: python.md
+    - Vagrant: vagrant.md
+theme: readthedocs      # 主题

@@ -127,6 +127,19 @@
 		</array>
 		<key>ABFDAC0A-59AC-46FF-8317-30A5EE1E72B4</key>
 		<array/>
+		<key>AEE5C04E-1C5F-4BBF-982B-B3B051538EEA</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>B2F96C31-53D7-4372-B4B1-A63242E03685</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
 		<key>AEEE997C-352F-4019-BFEF-40480C5770E9</key>
 		<array>
 			<dict>
@@ -142,6 +155,19 @@
 			<dict>
 				<key>destinationuid</key>
 				<string>C2C22059-F577-4982-B0BF-665E0E358013</string>
+				<key>modifiers</key>
+				<integer>0</integer>
+				<key>modifiersubtext</key>
+				<string></string>
+				<key>vitoclose</key>
+				<false/>
+			</dict>
+		</array>
+		<key>B2F96C31-53D7-4372-B4B1-A63242E03685</key>
+		<array>
+			<dict>
+				<key>destinationuid</key>
+				<string>59283810-F7EB-471D-BF42-E310BB651471</string>
 				<key>modifiers</key>
 				<integer>0</integer>
 				<key>modifiersubtext</key>
@@ -528,6 +554,71 @@ done</string>
 		<dict>
 			<key>config</key>
 			<dict>
+				<key>argumenttype</key>
+				<integer>0</integer>
+				<key>keyword</key>
+				<string>wifi</string>
+				<key>subtext</key>
+				<string>on  打开 off 关闭</string>
+				<key>text</key>
+				<string>打开关闭 WIFI</string>
+				<key>withspace</key>
+				<true/>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.input.keyword</string>
+			<key>uid</key>
+			<string>AEE5C04E-1C5F-4BBF-982B-B3B051538EEA</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>concurrently</key>
+				<false/>
+				<key>escaping</key>
+				<integer>102</integer>
+				<key>script</key>
+				<string>networksetup -setairportpower en0 {query}</string>
+				<key>scriptargtype</key>
+				<integer>0</integer>
+				<key>scriptfile</key>
+				<string></string>
+				<key>type</key>
+				<integer>0</integer>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.action.script</string>
+			<key>uid</key>
+			<string>B2F96C31-53D7-4372-B4B1-A63242E03685</string>
+			<key>version</key>
+			<integer>2</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
+				<key>lastpathcomponent</key>
+				<false/>
+				<key>onlyshowifquerypopulated</key>
+				<false/>
+				<key>removeextension</key>
+				<false/>
+				<key>text</key>
+				<string>{query}</string>
+				<key>title</key>
+				<string>Successful</string>
+			</dict>
+			<key>type</key>
+			<string>alfred.workflow.output.notification</string>
+			<key>uid</key>
+			<string>59283810-F7EB-471D-BF42-E310BB651471</string>
+			<key>version</key>
+			<integer>1</integer>
+		</dict>
+		<dict>
+			<key>config</key>
+			<dict>
 				<key>alfredfiltersresults</key>
 				<false/>
 				<key>alfredfiltersresultsmatchmode</key>
@@ -692,7 +783,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<key>xpos</key>
 			<integer>510</integer>
 			<key>ypos</key>
-			<integer>965</integer>
+			<integer>1075</integer>
 		</dict>
 		<key>5348461E-968E-4C7D-A961-2C53A47EEB39</key>
 		<dict>
@@ -700,6 +791,13 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<integer>770</integer>
 			<key>ypos</key>
 			<integer>170</integer>
+		</dict>
+		<key>59283810-F7EB-471D-BF42-E310BB651471</key>
+		<dict>
+			<key>xpos</key>
+			<integer>565</integer>
+			<key>ypos</key>
+			<integer>810</integer>
 		</dict>
 		<key>679ACFD3-4EFD-4253-8DE7-43596D7AE00B</key>
 		<dict>
@@ -713,7 +811,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<key>xpos</key>
 			<integer>180</integer>
 			<key>ypos</key>
-			<integer>965</integer>
+			<integer>1075</integer>
 		</dict>
 		<key>7550C092-A6C8-4BB2-A593-865B5A9F831B</key>
 		<dict>
@@ -741,14 +839,21 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<key>xpos</key>
 			<integer>180</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>940</integer>
 		</dict>
 		<key>ABFDAC0A-59AC-46FF-8317-30A5EE1E72B4</key>
 		<dict>
 			<key>xpos</key>
 			<integer>350</integer>
 			<key>ypos</key>
-			<integer>830</integer>
+			<integer>940</integer>
+		</dict>
+		<key>AEE5C04E-1C5F-4BBF-982B-B3B051538EEA</key>
+		<dict>
+			<key>xpos</key>
+			<integer>180</integer>
+			<key>ypos</key>
+			<integer>810</integer>
 		</dict>
 		<key>AEEE997C-352F-4019-BFEF-40480C5770E9</key>
 		<dict>
@@ -756,6 +861,13 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<integer>350</integer>
 			<key>ypos</key>
 			<integer>685</integer>
+		</dict>
+		<key>B2F96C31-53D7-4372-B4B1-A63242E03685</key>
+		<dict>
+			<key>xpos</key>
+			<integer>350</integer>
+			<key>ypos</key>
+			<integer>810</integer>
 		</dict>
 		<key>C2C22059-F577-4982-B0BF-665E0E358013</key>
 		<dict>
@@ -769,7 +881,7 @@ echo -n $(nohup curl $1 -O &amp;)</string>
 			<key>xpos</key>
 			<integer>350</integer>
 			<key>ypos</key>
-			<integer>965</integer>
+			<integer>1075</integer>
 		</dict>
 	</dict>
 	<key>variablesdontexport</key>

@@ -126,3 +126,5 @@ golang/pkg/
 golang/bin/
 golang/src/github.com/
 golang/src/gopkg.in/
+
+site/

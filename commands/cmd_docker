@@ -22,6 +22,5 @@ docker --version
 docker version
 # 查看 docker 详情
 docker info
-
 # 重新创建容器，并在后台运行
 docker-compose up --force-recreate -d <name>

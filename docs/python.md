@@ -1,0 +1,5 @@
+## python -m
+**py3 启动一个默认 8000 端口的服务**
+```
+python -m http.server
+```
