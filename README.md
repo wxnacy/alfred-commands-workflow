@@ -4,7 +4,7 @@
 
 提供查看帮助文档、复制常用命令等功能
 
-[Download](https://github.com/wxnacy/alfred-commands-workflow/releases/download/v2020.06.18/Commands.Help.Tools.alfredworkflow)
+[Download](https://github.com/wxnacy/alfred-commands-workflow/releases/download/v2020.06.21/Commands.Help.Tools.alfredworkflow)
 
 ## 复制常用命令
 
