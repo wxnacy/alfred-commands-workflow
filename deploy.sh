@@ -3,6 +3,7 @@
 # Description:
 
 python convert.py
+mkdocs build
 
 for file in `find site | grep '\.'`
 do

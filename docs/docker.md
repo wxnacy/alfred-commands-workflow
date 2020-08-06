@@ -4,6 +4,10 @@
 docker --version
 ```
 ## docker build
+**在当前目录创建镜像，不使用缓存**
+```
+docker build --no-cache -t <image-name> .
+```
 **在当前目录创建镜像**
 ```
 docker build -t <image-name> .

@@ -20,3 +20,29 @@ ifconfig | grep 'eth0' -A 1 | grep 'inet ' | awk '{print $2}' | sed 's/addr://g'
 
 # 查看进程，并过滤关键字
 ps -ef | grep <pattern>
+
+# 查找当前目录及子目录下所有文件
+find .
+# 查找当前目录及子目录下所有 .ipynb 后缀的文件
+find . -name "*.ipynb"
+# 查找当前目录及子目录下所有 .ipynb 后缀的文件，并忽略大小写
+find . -iname "*.ipynb"
+# 查找当前目录及子目录下所有不是 .ipynb 后缀的文件
+find . ! -name "*.ipynb"
+# 向下查找 1 层深度
+find . -maxdepth 1
+# 根据文件类型进行搜索
+find . -type f
+# 查找上层目录并多匹配
+find .. -name "*.py" -o -name "*.pdf"
+# 匹配文件路径或者文件
+find . -path "*ipynb*"
+# 基于正则表达式匹配文件路径
+find . -regex ".*ipynb"
+# 搜索大于 1k 的文件
+find . -type f -size +1k
+# 搜索小于 100k 的文件
+find . -type f -size -100k
+# 搜索等于 100k 的文件
+find . -type f -size 100k
+

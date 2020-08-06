@@ -15,7 +15,7 @@ vagrant destroy -f
 # 打包 box"
 vagrant package
 # 打包 box，并指定包名"
-vagrant package --ouput <box-name>
+vagrant package --output <box-name>
 # 当前虚拟机状态
 vagrant status
 # 重新加载虚拟机配置

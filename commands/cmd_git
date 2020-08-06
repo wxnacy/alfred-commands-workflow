@@ -10,6 +10,11 @@ git add -u
 # 查看所有分支，并显示版本信息
 git branch -v
 
+# clone 项目
+git clone <giturl>
+# 使用用户名密码 clone 项目
+git clone http://<username>:<password>@github.com/wxnacy/wgo.git
+
 # 初始化当前目录为仓库
 git init
 # 创建 <repo_name> 仓库

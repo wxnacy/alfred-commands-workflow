@@ -8,12 +8,16 @@ docker restart `docker ps -a | awk '{print $1}'`
 docker logs -f --tail 10 <continer-name>
 # 从最后 10 行开始实时查看日志并过滤信息
 docker logs -f --tail 10 <continer-name> 2>&1 | grep <pattern>
+# 登录
+docker login
 # 查看当前运行的进程列表
 docker ps
 # 查看所有进程列表
 docker ps -a
 # 在当前目录创建镜像
 docker build -t <image-name> .
+# 在当前目录创建镜像，不使用缓存
+docker build --no-cache -t <image-name> .
 # 查看镜像列表
 docker image ls
 # 查看版本
@@ -24,3 +28,11 @@ docker version
 docker info
 # 重新创建容器，并在后台运行
 docker-compose up --force-recreate -d <name>
+# 重启 Docker
+systemctl restart docker
+# 打标签
+docker tag <exist-image>[:tag-name] <new-image>[:tag-name]
+# 拉取镜像
+docker pull <image-name>[:tag-name]
+# 推送镜像
+docker push <image-name>[:tag-name]

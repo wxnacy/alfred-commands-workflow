@@ -27,6 +27,56 @@ echo -n $(echo -n $(pwd) | sed 's/ /\\ /g') | pbcopy
 ```
 echo -n 'hello world' | pbcopy
 ```
+## find .
+**查找当前目录及子目录下所有文件**
+```
+find .
+```
+**查找当前目录及子目录下所有不是 .ipynb 后缀的文件**
+```
+find . ! -name "*.ipynb"
+```
+**查找当前目录及子目录下所有 .ipynb 后缀的文件，并忽略大小写**
+```
+find . -iname "*.ipynb"
+```
+**向下查找 1 层深度**
+```
+find . -maxdepth 1
+```
+**查找当前目录及子目录下所有 .ipynb 后缀的文件**
+```
+find . -name "*.ipynb"
+```
+**匹配文件路径或者文件**
+```
+find . -path "*ipynb*"
+```
+**基于正则表达式匹配文件路径**
+```
+find . -regex ".*ipynb"
+```
+**根据文件类型进行搜索**
+```
+find . -type f
+```
+**搜索大于 1k 的文件**
+```
+find . -type f -size +1k
+```
+**搜索小于 100k 的文件**
+```
+find . -type f -size -100k
+```
+**搜索等于 100k 的文件**
+```
+find . -type f -size 100k
+```
+## find ..
+**查找上层目录并多匹配**
+```
+find .. -name "*.py" -o -name "*.pdf"
+```
 ## ifconfig |
 **查看 Linux 系统内网 ip**
 ```

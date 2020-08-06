@@ -38,6 +38,15 @@ git branch -v
 ```
 git checkout -b <local-branch-name> origin/<remote-branch-name>
 ```
+## git clone
+**clone 项目**
+```
+git clone <giturl>
+```
+**使用用户名密码 clone 项目**
+```
+git clone http://<username>:<password>@github.com/wxnacy/wgo.git
+```
 ## git config
 **全局模式缓存凭证 15 分钟**
 ```
