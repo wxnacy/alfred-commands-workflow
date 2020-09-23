@@ -50,3 +50,7 @@ git pull origin <branch-name>
 git merge --abort
 # 查看某人一段时间的提交记录，并显示详情
 git log --stat --author=<pattern> --after=<date> --before=<date>
+
+# 初始化并更新库中的每个子模块
+git submodule update --init --recursive
+

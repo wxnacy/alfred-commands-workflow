@@ -10,10 +10,14 @@ docker logs -f --tail 10 <continer-name>
 docker logs -f --tail 10 <continer-name> 2>&1 | grep <pattern>
 # 登录
 docker login
+
 # 查看当前运行的进程列表
 docker ps
 # 查看所有进程列表
 docker ps -a
+# 删除所有停止运作的容器
+docker ps -a | grep Exited | awk '{print $1}' | xargs docker rm
+
 # 在当前目录创建镜像
 docker build -t <image-name> .
 # 在当前目录创建镜像，不使用缓存
@@ -36,3 +40,8 @@ docker tag <exist-image>[:tag-name] <new-image>[:tag-name]
 docker pull <image-name>[:tag-name]
 # 推送镜像
 docker push <image-name>[:tag-name]
+
+# 查看镜像列表
+docker image ls
+# 删除所有名称为空的镜像
+docker image ls | grep none | awk '{print $3}' | xargs docker rmi
