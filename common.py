@@ -3,7 +3,8 @@
 # Author: wxnacy(wxnacy@gmail.com)
 # Description:
 import os
-
+from  os.path import expanduser
+import json
 
 def read_file(filename):
     '''读取文件，并返回列表'''
@@ -37,6 +38,38 @@ def read_cmd(filename):
         item['arg'] = item['title']
         items.append(item)
     return items
+
+BOOKMARKS_PATH = expanduser("~/Library/Application Support/Google/Chrome/Default/Bookmarks")
+with open(BOOKMARKS_PATH, 'r') as f:
+    chrome_bookmarks = json.loads(f.read())
+
+def read_chrome():
+
+    items = chrome_bookmarks['roots']['bookmark_bar']['children']
+    res = []
+
+    def _children(items):
+        for item in items:
+            type = item['type']
+            name = item['name']
+            if type == 'url':
+                wf = dict(
+                    title = name,
+                    subtitle = item['url'],
+                    icon = './icon/chrome.png',
+                    valid = True,
+                )
+                wf['arg'] = wf['subtitle']
+                res.append(wf)
+            if type == 'folder':
+                if name == 'vi':
+                    continue
+                _children(item['children'])
+
+    _children(items)
+    return res
+
+
 
 #  def read_json(filename):
     #  lines = []

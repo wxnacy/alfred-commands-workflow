@@ -10,6 +10,9 @@ import timeit
 
 from workflow import Workflow3
 from common import read_cmd
+from common import read_chrome
+
+logger = logging.getLogger(__name__)
 
 ABBR = {
         "py": "python",
@@ -18,11 +21,28 @@ ABBR = {
 
 def get_all_commands():
     '''获取所有的命令'''
-    files = os.listdir('./commands')
+    commands = []
+    for dirname in ('./commands', '~/.alfred-commands-workflow/commands'):
+        lines = get_commands_by_dir(dirname)
+        logger.info(lines)
+        commands.extend(lines)
+    commands.extend(read_chrome())
+    return commands
+
+def get_commands_by_dir(dirname):
+    '''获取所有的命令'''
+    dirname = os.path.expanduser(dirname)
+    logger.info(dirname)
+    is_exist = os.path.exists(dirname)
+    if not is_exist:
+        return []
+    dirname = dirname.rstrip('/')
+    files = os.listdir(dirname)
     commands = []
     for f in files:
         if f.startswith('cmd_'):
-            filename = './commands/' + f
+            filename = dirname + '/' + f
+            logging.info(filename)
             data = read_cmd(filename)
             commands.extend(data)
     return commands
