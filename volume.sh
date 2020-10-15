@@ -15,6 +15,5 @@ then
     curr_vol=$[ curr_vol + 10 ]
 fi
 
-
 osascript -e "set volume output volume $curr_vol"
-echo $curr_vol
+echo 'volume' $1 10 'success current' $curr_vol
