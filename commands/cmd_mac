@@ -1,3 +1,7 @@
+# 进入本插件工作目录
+cd /Users/wxnacy/Documents/Alfred/Alfred.alfredpreferences/workflows/user.workflow.DEF9500C-7FE6-4FF8-BDA8-5239F16DE8DA/
+# 进入 IBook 本地目录
+cd '/Users/wxnacy/Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/'
 # 在文件夹显示隐藏文件
 defaults write com.apple.finder AppleShowAllFiles yes; killall Finder /System/Library/CoreServices/Finder.app
 # 在文件夹不显示隐藏文件
@@ -23,3 +27,8 @@ networksetup -setairportpower en0 off
 networksetup -setairportpower en0 on
 # 加入 WIFI
 networksetup -setairportnetwork en0 <wifiname> <wifipsword>
+
+# 打开本插件工作目录
+open /Users/wxnacy/Documents/Alfred/Alfred.alfredpreferences/workflows/user.workflow.DEF9500C-7FE6-4FF8-BDA8-5239F16DE8DA/
+# 打开 IBook 本地目录
+open '/Users/wxnacy/Library/Mobile Documents/iCloud~com~apple~iBooks/Documents/'

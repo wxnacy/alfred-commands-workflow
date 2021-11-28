@@ -53,4 +53,6 @@ git log --stat --author=<pattern> --after=<date> --before=<date>
 
 # 初始化并更新库中的每个子模块
 git submodule update --init --recursive
+# 将子模块拉取最新提交
+git submodule update --recursive --remote
 
